@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Base from './Base.jsx';
 import Matematicas from './Matematicas.jsx';
+import CenteredBox from './CenteredBox.jsx';
+import '../stylesheets/Layout/layout.scss';
 
 
 const Layout = () => {
@@ -14,13 +16,17 @@ const Layout = () => {
     return (
         <div className="layout">
             <header className="layout__header">
-                <Base />    
-                <Matematicas />
+                <Base />  
             </header>
             <div className="layout__main">
+                <h1>Placeholder 0</h1>
+                <CenteredBox>
+                    <h1>Placeholder 1</h1>
                 <main className="layout__content">
-                  
+                <Matematicas />
                 </main>
+                </CenteredBox>  
+                  
             </div>
         </div>
     );
