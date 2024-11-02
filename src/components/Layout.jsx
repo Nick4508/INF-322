@@ -1,7 +1,7 @@
 // Layout.jsx
 import React, { useState } from 'react';
 // import NavBar from './NavBar';
-import Logout from './Base';
+import Base from './Base';
 // import Base from '../pages/Base';
 // import Medicacion from '../pages/Medicacion';
 // import Citas from '../pages/Citas';
@@ -18,7 +18,7 @@ const Layout = () => {
     return (
         <div className="layout">
             <header className="layout__header">
-                <Base />
+                <Base/>
             </header>
             <div className="layout__main">
                 {/* <NavBar onSectionChange={handleSectionChange} /> */}
