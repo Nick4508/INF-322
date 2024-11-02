@@ -1,4 +1,4 @@
-# frontend-sample-app
+# better-aula
 
 Basic Frontend Development Environment to start an app with Webpack
 
