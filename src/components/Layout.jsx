@@ -1,7 +1,7 @@
 // Layout.jsx
 import React, { useState } from 'react';
 import Base from './Base.jsx';
-import Matematicas from '../pages/Matematicas.jsx';
+import Matematicas from './Matematicas.jsx';
 
 
 const Layout = () => {
@@ -15,7 +15,7 @@ const Layout = () => {
         <div className="layout">
             <header className="layout__header">
                 <Base />    
-                {/* <Matematicas /> */}
+                <Matematicas />
             </header>
             <div className="layout__main">
                 <main className="layout__content">
