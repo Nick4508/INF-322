@@ -9,7 +9,7 @@ const Home = () => {
         <h1>Bienvenidos</h1>
             <CenteredBox>
                 <h1>Mis cursos</h1>
-            <Navbar />
+            <Matematicas />
             </CenteredBox>  
     </div>
   );
