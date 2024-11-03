@@ -3,7 +3,7 @@ import InformacionGeneral from '../pages/InformacionGeneral';
 import Catedra from '../pages/Catedra';
 import Ayudantias from '../pages/Ayudantias';
 import MaterialExtra from '../pages/MaterialExtra';
-import '../stylesheets/navbar/navbar.css';
+import '../stylesheets/navbar/navbar.scss';
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState("informacion-general");
