@@ -1,5 +1,5 @@
 import React from 'react';
-import CenteredBox from '../components/CenteredBox'; // Asegúrate de que la ruta es correcta
+import CenteredBox from '../components/CenteredBox';
 import Matematicas from '../components/Matematicas';
 import Navbar from '../components/navbar'
 
