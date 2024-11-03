@@ -7,7 +7,7 @@ const Matematicas = () => {
 
   return (
       <div className="card">
-          <div className="card-header">
+          <div className="card__header">
               <span className="header-text">MATEMATICA</span>
               <Link to="/curso" className="card">
               <img src={logo} alt="Logo" className="Matematicas__logo" />
