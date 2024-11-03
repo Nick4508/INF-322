@@ -3,6 +3,7 @@ import InformacionGeneral from '../pages/InformacionGeneral';
 import Catedra from '../pages/Catedra';
 import Ayudantias from '../pages/Ayudantias';
 import MaterialExtra from '../pages/MaterialExtra';
+import FechasImportantes from '../pages/fechasImportantes';
 import '../stylesheets/navbar/navbar.scss';
 
 const Navbar = () => {
@@ -12,6 +13,8 @@ const Navbar = () => {
     switch (activeTab) {
       case "informacion-general":
         return <InformacionGeneral />;
+      case "fechas":
+        return <FechasImportantes />
       case "catedra":
         return <Catedra />;
       case "ayudantias":
@@ -31,6 +34,12 @@ const Navbar = () => {
           onClick={() => setActiveTab("informacion-general")}
         >
           Información General
+        </button>
+        <button 
+          className={`tab-item ${activeTab === "fechas" ? "active" : ""}`}
+          onClick={() => setActiveTab("fechas")}
+        >
+          Fechas Importantes
         </button>
         <button 
           className={`tab-item ${activeTab === "catedra" ? "active" : ""}`}

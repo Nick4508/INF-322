@@ -7,6 +7,7 @@ import Home from './pages/home';
 import './stylesheets/index.scss'
 import './stylesheets/globals.scss'
 import Curso from './pages/curso.jsx';
+import Construccion from './pages/UnderConstruction.jsx';
 
 document.body.innerHTML = '<div id="root"></div>';
 const root = createRoot(document.getElementById('root'));
@@ -19,9 +20,9 @@ root.render(
       <Routes>
         <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path='curso' element={<Curso/>} >
-                
-            </Route>
+            <Route path='curso' element={<Curso/>} />
+            <Route path= 'construccion' element={<Construccion/>}/>                
+            
 
         </Route>
       </Routes>

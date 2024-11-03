@@ -1,0 +1,36 @@
+.under-construction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f2f2f2;
+  
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+    }
+  
+    p {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+  
+    .back-button {
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #0f47ad;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  
