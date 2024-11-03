@@ -19,7 +19,6 @@ const Layout = () => {
                 <Base />  
             </header>
             <div className="layout__main">
-                
                   <Outlet />
             </div>
         </div>

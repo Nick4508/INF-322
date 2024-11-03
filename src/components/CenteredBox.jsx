@@ -5,6 +5,7 @@ const CenteredBox = ({ children }) => {
     return (
       <div className="CenteredBox">
         {children}
+        <></>
       </div>
     );
   };

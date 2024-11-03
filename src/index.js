@@ -2,9 +2,10 @@ import React from 'react'
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
 
-import Layout from './components/layout'
+import Layout from './components/Layout.jsx'
 import Home from './pages/home';
 import './stylesheets/index.scss'
+import './components/navbar.jsx';
 
 document.body.innerHTML = '<div id="root"></div>';
 const root = createRoot(document.getElementById('root'));
