@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/Matematicas/Card.css';
+import '../stylesheets/Matematicas/Card.scss';
 import logo from '../assets/intro_matematicas.png';
 
 const Matematicas = () => {

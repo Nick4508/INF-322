@@ -1,9 +1,9 @@
 // Layout.jsx
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Base from './Base.jsx';
-import Matematicas from './Matematicas.jsx';
-import CenteredBox from './CenteredBox.jsx';
 import '../stylesheets/Layout/layout.scss';
+// import home from '../pages/Home.jsx';
 
 
 const Layout = () => {
@@ -19,14 +19,8 @@ const Layout = () => {
                 <Base />  
             </header>
             <div className="layout__main">
-                <h1>Placeholder 0</h1>
-                <CenteredBox>
-                    <h1>Placeholder 1</h1>
-                <main className="layout__content">
-                <Matematicas />
-                </main>
-                </CenteredBox>  
-                  
+                
+                  <Outlet />
             </div>
         </div>
     );
