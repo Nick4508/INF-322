@@ -1,33 +1,26 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import '../stylesheets/Catedra/catedra.scss';
 
 const FechasImportantes = () => {
-  const navigate = useNavigate();
-
-  const handleDateClick = (date, description) => {
-    localStorage.setItem('selectedDate', date); 
-    localStorage.setItem('eventDescription', description); 
-    navigate('/curso'); 
-  };
+  
 
   const fechas = [
-    { id: 1, name: 'Examen Parcial', date: '2024-11-15T10:00:00' },
-    { id: 2, name: 'Entrega de Proyecto', date: '2024-12-01T23:59:59' },
-    { id: 3, name: 'Examen Final', date: '2024-12-20T15:00:00' },
+    { id: 1, name: 'Control 3', date: '2024-11-17T23:59:59' },
+    { id: 2, name: 'Certamen 3', date: '2024-11-24T15:00:00' },
+    { id: 3, name: 'Certamen Global', date: '2024-12-02T15:00:00' },
   ];
 
   return (
     <div>
       <h2>Fechas Importantes</h2>
-      <ul>
+
+      <ul className="resource-list">
         {fechas.map((fecha) => (
-          <li 
-            key={fecha.id} 
-            onClick={() => handleDateClick(fecha.date, fecha.name)} 
-            className="date-item"
-            style={{ cursor: 'pointer', margin: '10px 0' }}
-          >
-            {fecha.name} - {new Date(fecha.date).toLocaleString()}
+          <li key={fecha.id} className="resource-item">
+            <span className="resource-icon">📅</span>
+            <span className="resource-name">
+              {fecha.name} - {new Date(fecha.date).toLocaleDateString()}
+            </span>
           </li>
         ))}
       </ul>

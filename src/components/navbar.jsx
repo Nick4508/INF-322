@@ -4,6 +4,7 @@ import Catedra from '../pages/Catedra';
 import Ayudantias from '../pages/Ayudantias';
 import MaterialExtra from '../pages/MaterialExtra';
 import FechasImportantes from '../pages/fechasImportantes';
+import Horarios from '../pages/Horarios';
 import '../stylesheets/navbar/navbar.scss';
 
 const Navbar = () => {
@@ -21,6 +22,8 @@ const Navbar = () => {
         return <Ayudantias />;
       case "material-extra":
         return <MaterialExtra />;
+      case "Horario":
+        return <Horarios />
       default:
         return <InformacionGeneral />;
     }
@@ -58,6 +61,12 @@ const Navbar = () => {
           onClick={() => setActiveTab("material-extra")}
         >
           Material Extra
+        </button>
+        <button 
+          className={`tab-item ${activeTab === "Horario" ? "active" : ""}`}
+          onClick={() => setActiveTab("Horario")}
+        >
+          Horario
         </button>
       </div>
       <div className="tab-content">
