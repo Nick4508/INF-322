@@ -1,0 +1,18 @@
+.InformacionGeneral__Countdowncontainer{
+    display: flex;
+};
+
+.InformacionGeneral__Button{
+    background: none; 
+    border: none; 
+    color: red; 
+    cursor: pointer; 
+    font-size: 30px; 
+};
+
+.InformacionGeneral__Alertcontainer{
+    background-color: #f9ef6f;
+    border: 2px solid #f0a00b;
+    border-radius: 10px;
+    width: 50%;
+}

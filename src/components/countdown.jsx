@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 const Countdown = ({ targetDate, eventDescription }) => {
   const [timeLeft, setTimeLeft] = useState({});
 
@@ -24,7 +25,7 @@ const Countdown = ({ targetDate, eventDescription }) => {
   }, [targetDate]);
 
   return (
-    <div>
+    <div className='Countdown__container'>
       <p> Quedan {timeLeft.days} días para {eventDescription}
       
       </p>

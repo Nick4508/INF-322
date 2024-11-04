@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/Catedra/catedra.scss';
+import '../stylesheets/InformacionGeneral/InformacionGeneral.scss'
 import pdf from "../assets/Pdf.png";
 import foro from "../assets/Forum.png";
 import Countdown from '../components/Countdown';
@@ -61,13 +62,13 @@ const Catedra = () => {
           </li>
         ))}
       </ul>
-      <div>
+      <div className='InformacionGeneral__Alertcontainer'>
       {selectedDates.map((date) => (
-          <div key={date.id}>
-              <Countdown targetDate={new Date(date.date)} eventDescription={date.name} />
-              <button onClick={() => handleRemoveCountdown(date.id)} className="remove-button">
-                  Eliminar Cuenta Regresiva
+          <div key={date.id} className='InformacionGeneral__Countdowncontainer'>
+              <button onClick={() => handleRemoveCountdown(date.id)} className="InformacionGeneral__Button">
+                  X
               </button>
+              <Countdown targetDate={new Date(date.date)} eventDescription={date.name} />
           </div>
       ))}
       </div>
