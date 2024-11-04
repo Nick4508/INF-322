@@ -1,5 +1,7 @@
 import React from 'react';
+import { useState } from 'react';
 import '../stylesheets/Horarios/horarios.scss';
+
 
 const horarios = [
   {
@@ -58,36 +60,57 @@ const horarios = [
 ];
 
 const Horarios = () => {
+  const [selectedParalelo, setSelectedParalelo] = useState('');
+  
+  const uniqueParalelos = horarios.map(h => h.paralelo);
+  
+  const handleParaleloChange = (event) => {
+    setSelectedParalelo(event.target.value);
+  };
+  
+  const selectedHorario = horarios.find(paralelo => paralelo.paralelo === selectedParalelo);
+  
+
   return (
     <div>
       <h2>Horarios por Paralelo</h2>
-      {horarios.map((paralelo) => (
-        <div key={paralelo.paralelo} className="paralelo-section">
-          <h3>{paralelo.paralelo}</h3>
-          <table className="horarios-table">
-            <thead>
-              <tr>
-                <th>Clases</th>
-                <th>Día</th>
-                <th>Hora de Inicio</th>
-                <th>Hora de Fin</th>
-                <th>Sala</th>
-              </tr>
-            </thead>
-            <tbody>
-              {paralelo.clases.map((clase) => (
-                <tr key={clase.id}>
-                  <td>{clase.materia}</td>
-                  <td>{clase.dia}</td>
-                  <td>{clase.horaInicio}</td>
-                  <td>{clase.horaFin}</td>
-                  <td>{clase.Sala}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
+      <label htmlFor="paralelo-select">Selecciona un paralelo:</label>
+      <select id="paralelo-select" onChange={handleParaleloChange} value={selectedParalelo}>
+        <option value="">--Seleccionar--</option>
+        {uniqueParalelos.map((paralelo) => (
+          <option key={paralelo} value={paralelo}>
+            {paralelo}
+          </option>
+        ))}
+      </select>
+  
+       {selectedParalelo && selectedHorario && (
+         <div className="paralelo-section">
+           <h3>{selectedHorario.paralelo}</h3>
+           <table className="horarios-table">
+             <thead>
+               <tr>
+                 <th>Clases</th>
+                 <th>Día</th>
+                 <th>Hora de Inicio</th>
+                 <th>Hora de Fin</th>
+                 <th>Sala</th>
+               </tr>
+             </thead>
+             <tbody>
+               {selectedHorario.clases.map((clase) => (
+                 <tr key={clase.id}>
+                   <td>{clase.materia}</td>
+                   <td>{clase.dia}</td>
+                   <td>{clase.horaInicio}</td>
+                   <td>{clase.horaFin}</td>
+                   <td>{clase.Sala}</td>
+                 </tr>
+               ))}
+             </tbody>
+           </table>
+         </div>
+       )}
     </div>
   );
 };
