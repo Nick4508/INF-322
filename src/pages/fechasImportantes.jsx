@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import '../stylesheets/Catedra/catedra.scss';
 
 const FechasImportantes = () => {
@@ -10,20 +10,42 @@ const FechasImportantes = () => {
     { id: 3, name: 'Certamen Global', date: '2024-12-02T15:00:00' },
   ];
 
+  const [selectedDates, setSelectedDates] = useState([]);
+
+  useEffect(() => {
+      const storedDates = JSON.parse(localStorage.getItem('selectedDates')) || [];
+      setSelectedDates(storedDates);
+  }, []);
+
+  const handleCheckboxChange = (event, date) => {
+      const updatedDates = event.target.checked
+          ? [...selectedDates, date] 
+          : selectedDates.filter(d => d.id !== date.id); 
+      setSelectedDates(updatedDates);
+      localStorage.setItem('selectedDates', JSON.stringify(updatedDates));
+  };
+
   return (
     <div>
-      <h2>Fechas Importantes</h2>
-
-      <ul className="resource-list">
-        {fechas.map((fecha) => (
-          <li key={fecha.id} className="resource-item">
-            <span className="resource-icon">📅</span>
-            <span className="resource-name">
-              {fecha.name} - {new Date(fecha.date).toLocaleDateString()}
-            </span>
-          </li>
-        ))}
-      </ul>
+        <h2>Fechas Importantes</h2>
+        
+        <ul className="resource-list">
+            {fechas.map((fecha) => (
+                <li key={fecha.id} className="resource-item">
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={selectedDates.some(d => d.id === fecha.id)}
+                            onChange={(e) => handleCheckboxChange(e, fecha)}
+                        />
+                        <span className="resource-icon">📅</span>
+                        <span className="resource-name">
+                            {fecha.name} - {new Date(fecha.date).toLocaleDateString()}
+                        </span>
+                    </label>
+                </li>
+            ))}
+        </ul>
     </div>
   );
 };

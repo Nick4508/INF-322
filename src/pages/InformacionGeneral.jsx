@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/Catedra/catedra.scss';
 import pdf from "../assets/Pdf.png";
 import foro from "../assets/Forum.png";
+import Countdown from '../components/Countdown';
 
 const resources = [
   { id: 1, name: 'Noticias y avisos importantes', icon: '📰', imageUrl: foro },
@@ -19,6 +20,19 @@ const Catedra = () => {
     setTimeout(() => {
       setAlertMessage('');
     }, 3000);
+  };
+
+  const [selectedDates, setSelectedDates] = useState([]);
+
+  useEffect(() => {
+      const storedDates = JSON.parse(localStorage.getItem('selectedDates')) || [];
+      setSelectedDates(storedDates);
+  }, []);
+
+  const handleRemoveCountdown = (id) => {
+      const updatedDates = selectedDates.filter(date => date.id !== id);
+      setSelectedDates(updatedDates);
+      localStorage.setItem('selectedDates', JSON.stringify(updatedDates));
   };
 
   return (
@@ -47,6 +61,16 @@ const Catedra = () => {
           </li>
         ))}
       </ul>
+      <div>
+      {selectedDates.map((date) => (
+          <div key={date.id}>
+              <Countdown targetDate={new Date(date.date)} eventDescription={date.name} />
+              <button onClick={() => handleRemoveCountdown(date.id)} className="remove-button">
+                  Eliminar Cuenta Regresiva
+              </button>
+          </div>
+      ))}
+      </div>
     </div>
   );
 };
