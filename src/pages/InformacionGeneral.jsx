@@ -13,9 +13,13 @@ const resources = [
   { id: 4, name: 'Reglas del curso', icon: '📜', imageUrl: pdf },
 ];
 
+
+
 const Catedra = () => {
   const [alertMessage, setAlertMessage] = useState('');
   
+  const [countdownHidden, setCountdownHidden] = useState(false);
+
   const handleClick = (resource) => {
     setAlertMessage(`Descargaste : ${resource.name}`);
     setTimeout(() => {
@@ -62,6 +66,7 @@ const Catedra = () => {
           </li>
         ))}
       </ul>
+      {countdownHidden == false && (
       <div className='InformacionGeneral__Alertcontainer'>
       {selectedDates.map((date) => (
           <div key={date.id} className='InformacionGeneral__Countdowncontainer'>
@@ -71,7 +76,12 @@ const Catedra = () => {
               <Countdown targetDate={new Date(date.date)} eventDescription={date.name} />
           </div>
       ))}
+      <button className='InformacionGeneral__ButtonHidealert' onClick={() => setCountdownHidden(true)}>
+          Cerrar alerta
+      </button>
       </div>
+    
+      )}
     </div>
   );
 };
