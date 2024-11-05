@@ -20,7 +20,7 @@ const MaterialExtra = () => {
 
   return (
     <div>
-      <h2>Material Extra</h2>
+      <h2>Pautas</h2>
       {alertMessage && (
         <div className="alert">
           <span>{alertMessage}</span>

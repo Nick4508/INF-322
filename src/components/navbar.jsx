@@ -60,7 +60,7 @@ const Navbar = () => {
           className={`tab-item ${activeTab === "material-extra" ? "active" : ""}`}
           onClick={() => setActiveTab("material-extra")}
         >
-          Material Extra
+          Pautas
         </button>
         <button 
           className={`tab-item ${activeTab === "Horario" ? "active" : ""}`}
