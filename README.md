@@ -1,6 +1,13 @@
-# better-aula
+# Better-Aula
 
-Basic Frontend Development Environment to start an app with Webpack
+En este repositorio se encuentra el MVP para el proyecto de INF-322
+
+Se usó como proyecto base `Basic Frontend Development Environment to start an app with Webpack`
+
+# Integrantes
+- Matías Barrera Vergara    202173539-9
+- Felipe Nuñez Acevedo      202173568-2
+- Nicolás Rodríguez Berrios 202173515-1
 
 This repo includes `Webpack` to start an environment to build frontend views using `React`.
 
