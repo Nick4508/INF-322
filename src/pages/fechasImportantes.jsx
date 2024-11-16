@@ -39,7 +39,7 @@ const FechasImportantes = () => {
               <span className="slider round"></span>
             </label>
             <span className="resource-name">
-              {fecha.name} - {new Date(fecha.date).toLocaleDateString()}
+                {fecha.name} - {new Date(fecha.date).toLocaleDateString()}
             </span>
           </li>
         ))}
