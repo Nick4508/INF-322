@@ -66,7 +66,7 @@ const Catedra = () => {
           </li>
         ))}
       </ul>
-      {countdownHidden == false && (
+      {countdownHidden == false && selectedDates.length > 0 &&(
       <div className='InformacionGeneral__Alertcontainer'>
       {selectedDates.map((date) => (
           <div key={date.id} className='InformacionGeneral__Countdowncontainer'>
