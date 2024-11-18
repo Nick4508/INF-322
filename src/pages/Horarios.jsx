@@ -74,8 +74,9 @@ const Horarios = () => {
   return (
     <div>
       <h2>Horarios por Paralelo</h2>
-      <label htmlFor="paralelo-select">Selecciona un paralelo:</label>
-      <select id="paralelo-select" onChange={handleParaleloChange} value={selectedParalelo}>
+      <h3>Selecciona un paralelo:</h3>
+
+      <select className="paralelo-select" id="paralelo-select" onChange={handleParaleloChange} value={selectedParalelo}>
         <option value="">--Seleccionar--</option>
         {uniqueParalelos.map((paralelo) => (
           <option key={paralelo} value={paralelo}>

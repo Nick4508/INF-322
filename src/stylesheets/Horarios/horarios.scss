@@ -26,3 +26,20 @@
     color: #333;
   }
   
+  .paralelo-select{
+    width: 20%; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #6a6a6a; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease; 
+  }
+
+  .paralelo-select:focus{
+ 
+    border-color: #4CAF50; 
+    outline: none; 
+   
+  }
+  

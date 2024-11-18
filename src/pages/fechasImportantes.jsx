@@ -26,7 +26,7 @@ const FechasImportantes = () => {
   return (
     <div>
       <h2>Fechas Importantes</h2>
-
+      <h3>Activar recordatorio</h3>
       <ul className="resource-list">
         {fechas.map((fecha) => (
           <li key={fecha.id} className="resource-item">

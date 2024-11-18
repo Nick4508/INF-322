@@ -3,9 +3,9 @@ import '../stylesheets/Catedra/catedra.scss';
 import pdf from "../assets/Pdf.png";
 
 const MaterialExtraResources = [
-  { id: 1, name: 'Pautas-C1', icon: '📜', imageUrl: pdf },
-  { id: 2, name: 'Pautas-C2', icon: '📜', imageUrl: pdf },
-  { id: 3, name: 'Pautas-C3', icon: '📜', imageUrl: pdf },
+  { id: 1, name: 'Certamen1-Pauta', icon: '📜', imageUrl: pdf },
+  { id: 2, name: 'Certamen2-Pauta', icon: '📜', imageUrl: pdf },
+  { id: 3, name: 'Certamen3-Pauta', icon: '📜', imageUrl: pdf },
 ];
 
 const MaterialExtra = () => {
