@@ -42,7 +42,7 @@ const Navbar = () => {
           className={`tab-item ${activeTab === "fechas" ? "active" : ""}`}
           onClick={() => setActiveTab("fechas")}
         >
-          Fechas Importantes ⚠️
+          🔔 Fechas Importantes 🔔
         </button>
         <button 
           className={`tab-item ${activeTab === "catedra" ? "active" : ""}`}

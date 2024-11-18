@@ -30,7 +30,7 @@ const FechasImportantes = () => {
       <ul className="resource-list">
         {fechas.map((fecha) => (
           <li key={fecha.id} className="resource-item">
-            <label className="switch">
+            <label title="Activar notificación"className="switch">
               <input
                 type="checkbox"
                 checked={selectedDates.some(d => d.id === fecha.id)}

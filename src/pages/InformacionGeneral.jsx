@@ -4,7 +4,7 @@ import '../stylesheets/Catedra/catedra.scss';
 import '../stylesheets/InformacionGeneral/InformacionGeneral.scss'
 import pdf from "../assets/Pdf.png";
 import foro from "../assets/Forum.png";
-import Countdown from '../components/Countdown';
+import Countdown from '../components/countdown';
 
 const resources = [
   { id: 1, name: 'Noticias y avisos importantes', icon: '📰', imageUrl: foro },
@@ -70,8 +70,8 @@ const Catedra = () => {
       <div className='InformacionGeneral__Alertcontainer'>
       {selectedDates.map((date) => (
           <div key={date.id} className='InformacionGeneral__Countdowncontainer'>
-              <button onClick={() => handleRemoveCountdown(date.id)} className="InformacionGeneral__Button">
-                  X
+              <button className="InformacionGeneral__Button">
+                ⏰
               </button>
               <Countdown targetDate={new Date(date.date)} eventDescription={date.name} />
           </div>
