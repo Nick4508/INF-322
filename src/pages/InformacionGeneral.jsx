@@ -68,6 +68,9 @@ const Catedra = () => {
       </ul>
       {countdownHidden == false && selectedDates.length > 0 &&(
       <div className='InformacionGeneral__Alertcontainer'>
+      <button className='InformacionGeneral__ButtonHidealert' onClick={() => setCountdownHidden(true)}>
+          X
+      </button>
       {selectedDates.map((date) => (
           <div key={date.id} className='InformacionGeneral__Countdowncontainer'>
               <button className="InformacionGeneral__Button">
@@ -76,9 +79,7 @@ const Catedra = () => {
               <Countdown targetDate={new Date(date.date)} eventDescription={date.name} />
           </div>
       ))}
-      <button className='InformacionGeneral__ButtonHidealert' onClick={() => setCountdownHidden(true)}>
-          Cerrar alerta
-      </button>
+      
       </div>
     
       )}

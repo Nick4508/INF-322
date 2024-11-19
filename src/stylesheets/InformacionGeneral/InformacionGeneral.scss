@@ -11,13 +11,25 @@
 };
 
 .InformacionGeneral__Alertcontainer{
+    display: flex;
+    flex-direction: column;
     background-color: #f9ef6f;
     border: 2px solid #f0a00b;
     border-radius: 10px;
     width: 50%;
-    
+    justify-content: space-between; /* Keep button on the right side */  
 }
 
 .InformacionGeneral__ButtonHidealert{            
-    margin-left: 40%;
+    background: none;
+    position: relative;
+    top: 5px;
+    margin-left: auto;
+    margin-right: 5px;
+    border: none;
+    font-size: 20px;
+    color: #626262;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
